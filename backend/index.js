@@ -59,10 +59,10 @@ app.use(
 
 
 // routes
-app.use("/api/user", require("./routes/UserRoutes"))
+app.use("/api/user", require("./Routes/UserRoutes"))
 app.use(UserAuthenticator.isAuthorized)
-app.use("/api/chat", require("./routes/ChatRoute"))
-app.use("/api/message", require("./routes/MessageRoute"))
+app.use("/api/chat", require("./Routes/ChatRoute"))
+app.use("/api/message", require("./Routes/MessageRoute"))
 
 
 
