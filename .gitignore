@@ -1,3 +1,11 @@
 
 /backend/node_modules
 /frontend/node_modules
+
+
+
+# # /  
+# 1. create the build files 
+# 2. serve it as a static files from backend 
+
+#  go to the react and change the backend url and make a build file again and host again

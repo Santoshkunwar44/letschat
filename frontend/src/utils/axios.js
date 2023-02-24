@@ -1,6 +1,6 @@
 import axios from "axios"
 const axiosConfig = {
-    baseURL: "http://localhost:8000/api",
+    baseURL: "https://lets-chat-u9hz.onrender.com/api",
     withCredentials: true
 }
 

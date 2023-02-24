@@ -7,6 +7,7 @@ const app = express();
 const session = require("express-session")
 const MongoStore = require("connect-mongo");
 const UserAuthenticator = require("./middlewares/auth");
+const path = require("path");
 const server = require("http").createServer(app)
 const io = require("socket.io")(server, {
     cors: {
@@ -19,6 +20,9 @@ app.use(cors({
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true
 }))
+
+
+app.use(express.static(path.join(__dirname, "static")))
 
 app.use(morgan("common"))
 app.use(express.json())
@@ -43,10 +47,10 @@ app.use(
         saveUninitialized: false,
         store: mongoDBstore,
         cookie: {
-            maxAge: 1000 * 60 * 5,
+            maxAge: 1000 * 60 * 60 * 1,
             secure: false,
             httpOnly: true,
-            SameSite:"None"
+            SameSite: "None"
 
         }
     })

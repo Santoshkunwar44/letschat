@@ -11,11 +11,11 @@ const useSessionTimeOut = () => {
 
         if (!userData) return
         const { lastLoggedIn } = userData;
-        const sessionExpirationTimeInMS = lastLoggedIn + 1000 * 60 * 5;
+        const sessionExpirationTimeInMS = lastLoggedIn + 1000 * 60 * 60 * 1;
 
 
         const currentTime = Date.now()
-        const sessionExpirationBefore = sessionExpirationTimeInMS - 1000 * 60
+        const sessionExpirationBefore = sessionExpirationTimeInMS - 1000 * 60 * 5
         if (currentTime < sessionExpirationBefore) {
             handleSessionExpirationCheck(sessionExpirationBefore)
         } else {
