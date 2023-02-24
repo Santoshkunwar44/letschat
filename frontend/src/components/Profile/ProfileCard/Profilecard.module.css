@@ -1,0 +1,148 @@
+.profile_card {
+  width: 95%;
+  max-width: 400px;
+  position: absolute;
+  top: 10%;
+  margin: auto;
+  min-height: 350px;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  position: relative;
+  background-color: #001219;
+  align-items: center;
+  border-radius: 20px;
+}
+.profile_imageWrapper .profileImgee {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #37e710;
+  position: absolute;
+  padding: 6px;
+  background-color: black;
+}
+.profile_imageWrapper {
+  position: relative;
+  width: 120px;
+  border-radius: 50%;
+  height: 120px;
+}
+.profile_username {
+  text-transform: uppercase;
+  border-radius: 3px;
+
+  font-size: 1.7rem;
+
+  letter-spacing: 1px;
+  color: white;
+}
+.show_outline {
+  outline: 2px solid grey;
+}
+.profile_email {
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+.profile_buttons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.profile_buttons button:nth-of-type(1) {
+  background-color: #001219;
+  border: 2px solid #37e710;
+  color: #37e710;
+}
+.profile_buttons button:nth-of-type(1):hover {
+  background-color: #37e710;
+  color: #141414;
+  scale: 1.1;
+}
+.profile_buttons button:nth-of-type(2):hover {
+  background-color: #001219;
+  color: #37e710;
+  border: 2px solid #37e710;
+  scale: 1.1;
+}
+.profile_buttons button {
+  width: 80px;
+
+  height: 35px;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #37e710;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+}
+
+.user_online_dot {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #37e710;
+  border: 4px solid #000000;
+  position: absolute;
+  right: 0;
+  bottom: 8px;
+}
+/* profileOnlineInfo */
+
+.profileOnlineInfo {
+  right: 10px;
+  top: 10px;
+  background-color: #000000;
+  padding: 4px 13px;
+
+  border-radius: 20px;
+  border: 2px solid #37e710;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  cursor: pointer;
+}
+
+.online_text {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #37e710;
+}
+._online_dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #37e710;
+
+}
+.profile_main_details {
+  text-align: center;
+}
+
+/* editImgWrapper */
+.editImgWrapper {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  cursor: pointer;
+}
+.editCamera {
+  width: 40px !important;
+}
+.new_image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: 4px solid #37e710;
+  padding: 4px;
+  border-radius: 50%;
+}

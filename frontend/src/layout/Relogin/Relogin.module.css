@@ -1,0 +1,59 @@
+.relogin_container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+
+  height: 100vh;
+}
+.relogin_content {
+  position: absolute;
+
+  top: 20%;
+  z-index: 33;
+  border-radius: 5px;
+  background-color: #1e1d1d;
+  padding: 2rem;
+  height: fit-content;
+  max-width: 90%;
+  width: 450px;
+
+  text-align: center;
+  color: grey;
+}
+.relogin_content h2 {
+  margin-bottom: 1.2rem;
+  font-weight: 500;
+  font-size: 18px;
+  color: rgba(8, 151, 115, 0.76);
+}
+.reLogin_button {
+  background: #1e1d1d;
+  border: 2px solid #37e710;
+  color: #37e710;
+  border-radius: 4px;
+  width: 100px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.reLogin_button:hover {
+  background-color: #37e710;
+  color: black;
+}
+
+/* logged in  */
+/* when login  */
+/* set last logged in 
+ */
+.secondary_text{
+    color: rgba(128, 128, 128, 0.705);
+    font-size: 12px;
+    margin-top: 10px;
+}
