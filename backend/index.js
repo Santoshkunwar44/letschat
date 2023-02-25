@@ -11,20 +11,19 @@ const path = require("path");
 const server = require("http").createServer(app)
 const io = require("socket.io")(server, {
     cors: {
-        origin: [process.env.APP_URL],
+        origin: [process.env.APP_URL, "http://localhost:3000"],
         methods: ['GET', 'POST'],
         credentials: true,
     }
 });
 app.use(cors({
-    origin: [process.env.APP_URL],
+    origin: [process.env.APP_URL, "http://localhost:3000"],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true
 }))
 
 
 app.use(function (req, res, next) {
-    res.header('Access-Control-Allow-Origin', process.env.APP_URL);
     res.header('Access-Control-Allow-Credentials', true);
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,UPDATE,OPTIONS');
     res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
