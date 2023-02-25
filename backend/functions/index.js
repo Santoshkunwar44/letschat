@@ -1,38 +1,30 @@
+const functions = require("firebase-functions");
+
 const express = require("express")
 const morgan = require("morgan")
 const cors = require("cors");
-const { addOnlineUser, removeOnlineUser, getSocketIdOfAnUser, onlineUsers } = require("./services/socketService/socketService");
+const { addOnlineUser, removeOnlineUser, getSocketIdOfAnUser, onlineUsers } = require("../services/socketService/socketService");
 require("dotenv").config()
 const app = express();
 const session = require("express-session")
 const MongoStore = require("connect-mongo");
-const UserAuthenticator = require("./middlewares/auth");
+const UserAuthenticator = require("../middlewares/auth");
 const path = require("path");
 const server = require("http").createServer(app)
 const io = require("socket.io")(server, {
     cors: {
-        origin: [process.env.APP_URL],
+        origin: [process.env.APP_URL, "http://127.0.0.1:5173"],
         methods: ['GET', 'POST'],
-        credentials: true,
     }
 });
 app.use(cors({
-    origin: [process.env.APP_URL],
+    origin: [process.env.APP_URL, "http://127.0.0.1:5173"],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true
 }))
 
 
-app.use(function (req, res, next) {
-    res.header('Access-Control-Allow-Origin', process.env.APP_URL);
-    res.header('Access-Control-Allow-Credentials', true);
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,UPDATE,OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
-    next();
-});
-app.set('trust proxy', 1) // trust first proxy
-
-app.use(express.static(path.join(__dirname, "dist")))
+app.use(express.static(path.join(__dirname, "static")))
 
 app.use(morgan("common"))
 app.use(express.json())
@@ -60,6 +52,8 @@ app.use(
             maxAge: 1000 * 60 * 60 * 1,
             secure: false,
             httpOnly: true,
+            SameSite: "None"
+
         }
     })
 );
@@ -67,10 +61,10 @@ app.use(
 
 
 // routes
-app.use("/api/user", require("./Routes/UserRoutes"))
+app.use("/api/user", require("../Routes/UserRoutes"))
 app.use(UserAuthenticator.isAuthorized)
-app.use("/api/chat", require("./Routes/ChatRoute"))
-app.use("/api/message", require("./Routes/MessageRoute"))
+app.use("/api/chat", require("../Routes/ChatRoute"))
+app.use("/api/message", require("../Routes/MessageRoute"))
 
 
 

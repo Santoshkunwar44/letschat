@@ -8,6 +8,9 @@
 .noChat_img_box {
   text-align: center;
   cursor: pointer;
+  height:fit-content;
+  position: absolute;
+  top: 20%;
 }
 .noChatImg {
   cursor: pointer;

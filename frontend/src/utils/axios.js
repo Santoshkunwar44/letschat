@@ -1,8 +1,7 @@
 import axios from "axios"
-const axiosConfig = {
-    baseURL: "https://lets-chat-u9hz.onrender.com/api",
-    withCredentials: true
-}
 
-const axiosInstance = axios.create(axiosConfig)
+const axiosInstance = axios.create({
+    baseURL: "https://lets-chat-zyje.onrender.com/api",
+    withCredentials: true
+})
 export default axiosInstance

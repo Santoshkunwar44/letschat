@@ -74,7 +74,7 @@ const MessageInput = () => {
                     <div onClick={() => fileRef.current.click()} className={styles.gallary_box}>
                         {
                             !isSent ?
-                                <img className={styles.gallary_icon} width={"30px"} src="/icons/gallary.png" alt="gallaryIcon" /> : <img className={styles.sendingGIF} src="https://img.icons8.com/fluency/48/000000/loading-sign.png" alt='sendingLoader' />
+                                <img className={styles.gallary_icon} width={"30px"} src="/icon/photo.png" alt="gallaryIcon" /> : <img className={styles.sendingGIF} src="https://img.icons8.com/fluency/48/000000/loading-sign.png" alt='sendingLoader' />
 
                         }
                     </div>
@@ -87,7 +87,7 @@ const MessageInput = () => {
                     <input value={isSent ? "Loading" : inputRef} onChange={(e) => setInputRef(e.target.value)} type="text" placeholder='say something...' />
                 </div>
                 <div onClick={startMessage} className={`${styles.messages_send_box} ${inputRef?.length < 1 && styles.disableBtn}`}>
-                    <img width={"30px"} src="/icons/send.png" alt="sentIcon" />
+                    <img width={"30px"} src="/icon/sent.png" alt="sentIcon" />
                 </div>
             </div>
         </>
