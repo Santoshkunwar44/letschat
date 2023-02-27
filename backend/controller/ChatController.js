@@ -14,7 +14,7 @@ class ChatController {
         try {
             const chat = await ChatModel.find({
                 users: { $in: [userId] }
-            }).populate(["users", "latestMessage"])
+            }).sort({ updatedAt: -1 }).populate(["users", "latestMessage"])
             res.status(200).json({ message: chat, success: true })
         } catch (error) {
             res.status(500).json({ message: error.message, success: false })
@@ -65,7 +65,7 @@ class ChatController {
         }
     }
 
-    
+
 }
 
 module.exports = new ChatController()
