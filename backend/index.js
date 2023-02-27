@@ -7,7 +7,6 @@ const app = express();
 const session = require("express-session")
 const MongoStore = require("connect-mongo");
 const UserAuthenticator = require("./middlewares/auth");
-const path = require("path");
 const server = require("http").createServer(app)
 const io = require("socket.io")(server, {
     cors: {
@@ -31,7 +30,6 @@ app.use(function (req, res, next) {
 });
 app.set('trust proxy', 1) // trust first proxy
 
-app.use(express.static(path.join(__dirname, "dist")))
 
 app.use(morgan("common"))
 app.use(express.json())
